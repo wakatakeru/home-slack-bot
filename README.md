@@ -1,8 +1,8 @@
 # home-slack-bot
 ## What's this?
-This is `Slack bot` that using in home.
-So, it's implemented various functions.
-For example, Todo list, Today's meal, Schedule Checker, and many functions.
+This is `Slack bot` that using in home.  
+So, it's implemented various functions.  
+For example, Todo list, Today's meal, Schedule Checker, and many functions.  
 
 ## Installation
 ### Requirements
