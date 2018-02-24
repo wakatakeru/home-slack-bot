@@ -14,7 +14,7 @@ For example, Todo list, Today's meal, Schedule Checker, and many functions.
 1. `$ git clone`
 2. Rename `docker-compose.yml.sample` -> `docker-compose.yml`
 3. Edit `docker-compose.yml`
-   - Please check out this... `https://api.slack.com`
+   - Please check this... `https://api.slack.com`
 4. Create a Database named `home_slack_bot`
 5. `$ docker-compose build`
 6. `$ docker-compose up -d`
