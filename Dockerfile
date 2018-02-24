@@ -1,7 +1,11 @@
 FROM ruby:latest
 
-ADD client.rb /client.rb
+ENV APP_ROOT /usr/src/home-slack-bot
 
-WORKDIR /
+WORKDIR $APP_ROOT
 
-CMD ruby client.rb
+ADD Gemfile Gemfile
+ADD client.rb client.rb
+
+RUN bundle install
+CMD bundle exec ruby client.rb
