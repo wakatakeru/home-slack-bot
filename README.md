@@ -10,7 +10,7 @@ For example, Todo list, Today's meal, Schedule Checker, and many functions.
 - Docker
 - Docker Compose
 
-## Methods
+### Methods
 1. `$ git clone`
 2. Rename `docker-compose.yml.sample` -> `docker-compose.yml`
 3. Edit `docker-compose.yml`
