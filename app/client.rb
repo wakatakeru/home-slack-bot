@@ -1,6 +1,7 @@
-require './app/function/todo_function'
 require './app/function/fortune_function'
 require './app/function/meal_function'
+require './app/function/todo_function'
+require './app/function/weather_function'
 
 require 'slack-ruby-client'
 
@@ -21,7 +22,7 @@ client.on :message do |data|
   when 'sc'
     client.web_client.chat_postMessage channel: data.channel, text: '今日の予定は<未実装>'
   when 'wt'
-    client.web_client.chat_postMessage channel: data.channel, text: '今日の天気は<未実装>'
+    client.web_client.chat_postMessage channel: data.channel, text: "#{WeatherFunction.get_description}"
   when 'todo'
     client.web_client.chat_postMessage channel: data.channel, text: "予定の一覧だよ！\n #{TodoFunction.get_all}"
   when /^todo add/
