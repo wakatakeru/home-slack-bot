@@ -1,12 +1,28 @@
-version: '2'
+version: '2.1'
 
 services:
   app:
     build: './'
+    links:
+      - db
     environment:
       SLACK_API_TOKEN: 
-      DB_ADDRESS: 
-      DB_USERNAME: 
-      DB_PASSWORD: 
-      LOCALE_CODE: 
-      
+      DB_ADDRESS: db
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      LOCALE_CODE: 370000
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: home_slack_bot
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql
+    healthcheck:
+      test: "exit 0"

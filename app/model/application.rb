@@ -7,6 +7,6 @@ ActiveRecord::Base.establish_connection(
   adapter: ADAPTER,
   host: ENV['DB_ADDRESS'],
   user: ENV['DB_USERNAME'],
-  password: ENV['DB_PASSWORD']
+  password: ENV['DB_PASSWORD'],
   database: DB_NAME
 )
