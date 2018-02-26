@@ -1,6 +1,6 @@
-require './app/functions/todo_function'
-require './app/functions/fortune_function'
-require './app/functions/meal_function'
+require './app/function/todo_function'
+require './app/function/fortune_function'
+require './app/function/meal_function'
 
 require 'slack-ruby-client'
 
