@@ -9,6 +9,7 @@ ActiveRecord::Base.establish_connection(
   adapter: ADAPTER,
   host: ENV['DB_ADDRESS'],
   user: ENV['DB_USERNAME'],
+  password: ENV['DB_PASSWORD'],
   database: DB_NAME
 )
 
@@ -26,8 +27,8 @@ if ActiveRecord::Base.connection.table_exists?('meal') == false
   end
 end
 
-if ActiveRecord::Base.connection.table_exists?('shoppoing_list') == false
-  ActiveRecord::Migration.create_table :shoppoing_list do |t|
+if ActiveRecord::Base.connection.table_exists?('shopping') == false
+  ActiveRecord::Migration.create_table :shopping do |t|
     t.string  :content
     t.timestamp :created_at, :null => false
   end

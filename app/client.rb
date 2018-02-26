@@ -1,5 +1,6 @@
 require './app/function/fortune_function'
 require './app/function/meal_function'
+require './app/function/shopping_function'
 require './app/function/todo_function'
 require './app/function/weather_function'
 
@@ -24,13 +25,17 @@ client.on :message do |data|
   when 'wt'
     client.web_client.chat_postMessage channel: data.channel, text: "#{WeatherFunction.get_description}"
   when 'todo'
-    client.web_client.chat_postMessage channel: data.channel, text: "予定の一覧だよ！\n #{TodoFunction.get_all}"
+    client.web_client.chat_postMessage channel: data.channel, text: "ToDoの一覧です\n\n #{TodoFunction.get_all}"
   when /^todo add/
     client.web_client.chat_postMessage channel: data.channel, text: "#{TodoFunction.insert(data.text.split(' ')[2])}"
   when /^todo rm/
     client.web_client.chat_postMessage channel: data.channel, text: "#{TodoFunction.delete(data.text.split(' ')[2].to_i)}"
-  when /^bl add/
-    client.web_client.chat_postMessage channel: data.channel, text: "<未実装>"
+  when 'sl'
+    client.web_client.chat_postMessage channel: data.channel, text: "現在の買い物リストです\n\n #{ShoppingFunction.get_all}"
+  when /^sl add/
+    client.web_client.chat_postMessage channel: data.channel, text: "#{ShoppingFunction.insert(data.text.split(' ')[2])}"
+  when /^sl done/
+    client.web_client.chat_postMessage channel: data.channel, text: "#{ShoppingFunction.delete}"
   when 'おみくじ'
     client.web_client.chat_postMessage channel: data.channel, text: "#{FortuneFunction.get_fortune}"
   when '今日のご飯'

@@ -4,7 +4,9 @@ services:
   app:
     build: './'
     environment:
-      SLACK_API_TOKEN: YOUR_SLACK_API_TOKEN_HERE
-      DB_ADDRESS: YOUR_DB_ADDRESS_HERE
-      DB_USERNAME: YOUR_DB_USERNAME_HERE
+      SLACK_API_TOKEN: 
+      DB_ADDRESS: 
+      DB_USERNAME: 
+      DB_PASSWORD: 
+      LOCALE_CODE: 
       
